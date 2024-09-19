@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Recipe page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    html,body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #F3E5D8;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .main{
+      width: calc(53% - 80px);
+      background-color: white;
+      padding: 40px;
+      margin: 20px;
+      border-radius: 1rem;
+    }
+    .baslik{
+      font-family: "Young Serif", serif;
+    }
+    .image{
+      width: 100%;
+      border-radius: 1rem;
+      height: auto;
+    }
+    .recipe{
+      color: #2E2D2D;
+      font-size: 2.6rem;
+
+    }
+    .description{
+      color: #605656;
+      font-size: 1.05rem;
+      margin-top: 20px;
+      font-weight: 400;
+    }
+    .preparation{
+      width: calc(100% - 60px);
+      padding: 20px 30px;
+      background-color: #FFF7FB;
+      border-radius: 1rem;
+    }
+    .preparation h3{
+      color: #80455D;
+      font-size: 1.2rem;
+      margin-top: 0;
+      font-weight: 600;
+    }
+    .ingredients{
+      width: 100%;
+      padding: 20px 0;
+    }
+    .ingredients h3{
+      font-size: 1.2rem;
+      margin-top: 0;
+      font-weight: 600;
+    }
+    ul{
+      margin: 0;
+      padding: 0 0 0 20px;
+      list-style-type: disc;
+    }
+    li{
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 5px 0;
+      color: #716864;
+    }
+    .preparation li::marker{
+      color:#71384F;
+    }
+    bold{
+      font-weight: 600;
+    }
+    .brownie{
+      color:#834630;
+      font-size:1.5rem;
+    }
+    .ingredients li::marker{
+      color:#834630;
+    }
+    .ingredients ul{
+      margin: 10px 0;
+    }
+    .ingredients li{
+      padding: 5px 15px;
+    }
+    .line{
+      background-color: #EDEDED;
+      height: 3px;
+      width: 100%;
+    }
+    .instructions{
+      padding: 20px 0;
+    }
+    .instructions h3{
+      color: #834630;
+      font-size: 1.2rem;
+      margin-top: 0;
+      font-weight: 600;
+    }
+    .instructions ol{
+      margin: 0;
+      padding: 0 0 0 20px;
+      list-style-type: decimal;
+    }
+    .instructions li{
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 5px 10px;
+      color: #716864;
+    }
+    .instructions li::marker{
+      color:#71384F;
+      font-weight: bold;
+    }
+    .nutrition p{
+      color: #716864;
+    }
+    .nutrition table{
+      width: 100%;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .nutrition td,th{
+      border-bottom: 1px solid #EDEDED;
+      padding: 15px 0 15px 15px;
+    }
+    .nutrition th{
+      color: #716864;
+      font-weight: 400;
+    }
+    .nutrition td{
+      color: #7D5048;
+      font-weight: 600;
+    }
+    @media (max-width: 768px){
+      .main{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+      }
+      .image{
+        width: 100%;
+        border-radius: 0;
+        height: auto;
+      }
+      .recipe{
+        padding: 0 30px;
+      }
+      .description{
+        padding: 0 30px;
+        font-size: 1.13 rem;
+      }
+      .preparation{
+        margin: 0 30px;
+        padding: 20px 30px;
+        width: calc(100% - 120px);
+      }
+      .preparation li{
+        padding: 5px 20px;
+      }
+      .ingredients{
+        padding: 20px 30px;
+        width: calc(100% - 60px);
+      }
+      .line{
+        margin: 0 30px;
+        width: calc(100% - 60px);
+      }
+      .instructions{
+        padding: 20px 30px;
+      }
+      .nutrition{
+        padding: 20px 30px;
+      }
+      .nutrition p{
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <img class="image" src="./assets/images/image-omelette.jpeg" alt="Omelette">
+    <h1 class="baslik recipe">Simple Omelette Recipe</h1>
+    <p class="description">
+      An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
+      to perfection, optionally filled with your choice of cheese, vegetables, or meats.
+    </p>
+    <div class="preparation brownie">
+      <h3>Preparation time</h3>
+      <ul>
+        <li><bold>Total:</bold> Approximately 10 minutes</li>
+        <li><bold>Preparation:</bold> 5 minutes</li>
+        <li><bold>Cooking:</bold> 5 minutes</li>
+      </ul>
+    </div>
+    <div class="ingredients">
+      <span class="baslik brownie">Ingredients</span>
+      <ul>
+        <li>2-3 large eggs</li>
+        <li>Salt, to taste</li>
+        <li>Pepper, to taste</li>
+        <li>1 tablespoon of butter or oil</li>
+        <li>Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+      </ul>
+    </div>
+    <div class="line"></div>
+    <div class="instructions">
+      <h3 class="baslik brownie">Instructions</h3>
+      <ol>
+        <li><bold>Beat the eggs:</bold> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
+          You can add a tablespoon of water or milk for a fluffier texture.</li>
+        <li><bold>Heat the pan:</bold> Place a non-stick frying pan over medium heat and add butter or oil.</li>
+        <li><bold>Cook the omelette:</bold> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
+          the eggs evenly coat the surface.</li>
+        <li><bold>Add fillings (optional):</bold> When the eggs begin to set at the edges but are still slightly runny in the
+          middle, sprinkle your chosen fillings over one half of the omelette.</li>
+        <li><bold>Fold and serve:</bold> As the omelette continues to cook, carefully lift one edge and fold it over the
+          fillings. Let it cook for another minute, then slide it onto a plate.</li>
+        <li><bold>Enjoy:</bold> Serve hot, with additional salt and pepper if needed.</li>
+      </ol>
+    </div>
+    <div class="line"></div>
+    <div class="nutrition">
+      <h3 class="baslik brownie">Nutrition</h3>
+      <p>
+        The table below shows nutritional values per serving without the additional fillings.
+      </p>
+      <table>
+        <tr>
+          <th>Calories</th>
+          <td>277kcal</td>
+        </tr>
+        <tr>
+          <th>Carbs</th>
+          <td>0g</td>
+        </tr>
+        <tr>
+          <th>Protein</th>
+          <td>20g</td>
+        </tr>
+        <tr>
+          <th>Fat</th>
+          <td>22g</td>
+        </tr>
+      </table>
+  </div>
+
+  <!--
+  Simple Omelette Recipe
+
+  An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
+  to perfection, optionally filled with your choice of cheese, vegetables, or meats.
+
+  Preparation time
+
+  Total: Approximately 10 minutes
+  Preparation: 5 minutes
+  Cooking: 5 minutes
+
+  Ingredients
+
+  2-3 large eggs
+  Salt, to taste
+  Pepper, to taste
+  1 tablespoon of butter or oil
+  Optional fillings: cheese, diced vegetables, cooked meats, herbs
+
+  Instructions
+
+  Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
+  You can add a tablespoon of water or milk for a fluffier texture.
+
+  Heat the pan: Place a non-stick frying pan over medium heat and add butter or oil.
+
+  Cook the omelette: Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
+  the eggs evenly coat the surface.
+
+  Add fillings (optional): When the eggs begin to set at the edges but are still slightly runny in the 
+  middle, sprinkle your chosen fillings over one half of the omelette.
+
+  Fold and serve: As the omelette continues to cook, carefully lift one edge and fold it over the 
+  fillings. Let it cook for another minute, then slide it onto a plate.
+
+  Enjoy: Serve hot, with additional salt and pepper if needed.
+
+  Nutrition
+
+  The table below shows nutritional values per serving without the additional fillings.
+
+  Calories
+  277kcal
+
+  Carbs
+  0g
+
+  Protein
+  20g
+
+  Fat
+  22g
+-->
+</body>
+</html>
